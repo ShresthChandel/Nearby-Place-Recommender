@@ -1,16 +1,44 @@
-# React + Vite
+# Smart Nearby Places Recommender
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application that recommends nearby places based on your current mood (Work, Date, Quick Bite, Budget). It automatically detects your location and provides personalized recommendations with details like distance, ratings, and open hours.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Geolocation**: Automatically detects user location on load.
+- **Mood-Based Search**: Filters nearby places based on selected mood using Google Places API.
+- **Split-Screen UI**: Interactive Map on the right and a detailed List View on the left.
+- **Distance Calculation**: Real-time walking/driving distance from your location via Distance Matrix API.
+- **Sorting Options**: Sort results by "Highest Rated" or "Closest Distance".
+- **Responsive Design**: Works seamlessly on Mobile and Desktop devices.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React (Vite)
+- **Styling**: Tailwind CSS
+- **APIs**: Google Maps JavaScript API, Google Places API, Distance Matrix API
+- **State Management**: React Context API / Hooks
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+You will need a Google Cloud project with the following APIs enabled:
+- Maps JavaScript API
+- Places API
+- Distance Matrix API
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file based on `.env.example` and add your Google Maps API key:
+   ```env
+   VITE_GOOGLE_MAPS_API_KEY=your_api_key_here
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
